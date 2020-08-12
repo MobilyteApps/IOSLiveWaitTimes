@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (5.2.1)
+  - ANLoader (1.1.2)
+  - IQKeyboardManagerSwift (6.5.5)
+  - SDWebImage (5.8.1):
+    - SDWebImage/Core (= 5.8.1)
+  - SDWebImage/Core (5.8.1)
+  - SwiftGifOrigin (1.7.0)
+  - SWRevealViewController (2.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ANLoader
+  - IQKeyboardManagerSwift
+  - SDWebImage
+  - SwiftGifOrigin
+  - SWRevealViewController
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ANLoader
+    - IQKeyboardManagerSwift
+    - SDWebImage
+    - SwiftGifOrigin
+    - SWRevealViewController
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  ANLoader: fe33ee0568e30894f7d33e7d3aafe8de4b980153
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
+
+PODFILE CHECKSUM: 004b7bd5ca2aef734223277395f7bbcafc4f6dfb
+
+COCOAPODS: 1.9.3
