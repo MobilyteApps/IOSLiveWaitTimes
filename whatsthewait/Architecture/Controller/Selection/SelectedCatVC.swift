@@ -57,6 +57,7 @@ class SelectedCatVC: BaseVC {
        self.catItems = nil
         categoryTbl.reloadData() //http://whatsthewait.ca/api/?catID=1&limit=25&lon=-82.0622434&sort=distance&lat=28.751471199999997&key=Cl3t7dvwQlu2w4kZq68fRM3NgGQM8j
         //https://livewaittimes.com/api/?lat=28.751471199999997&lon=-82.0622434&sort&catID='1'&sort=distance&key=Cl3t7dvwQlu2w4kZq68fRM3NgGQM8j&limit=25
+        
         let params:[String:Any] = ["catID": catID!,"limit": 25,"lon":locationLongitude ?? 0.0 ,"sort":"distance","lat":locationLatitude ?? 0.0 ,"key":"Cl3t7dvwQlu2w4kZq68fRM3NgGQM8j"]
         print("====>\(params)")
         ApiManager.shared.get(url: ApiUrls.categoryItems, params: params) { (res:CatItems?, err) in
@@ -95,7 +96,7 @@ class SelectedCatVC: BaseVC {
                 self.catItems = catItems?.sorted {
                     Float($0.distance) ?? 0.0 < Float($1.distance) ?? 0.0
                 }
-                
+               
                 
             }
         case .waitTime:
@@ -109,6 +110,9 @@ class SelectedCatVC: BaseVC {
         if self.catItems?.count ?? 0 == 0 {
             self.categoryTbl.setEmptyMessage("No locations found")
         }else{
+            self.catItems = catItems?.sorted {
+                Float($0.isFeatured) ?? 0 > Float($1.isFeatured) ?? 0
+            }
             self.categoryTbl.restore()
         }
         self.categoryTbl.reloadData()

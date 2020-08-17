@@ -52,24 +52,24 @@ extension BaseVC:CLLocationManagerDelegate{
     func isLocationServiceEnabel(){
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
-                case .notDetermined, .restricted, .denied:
-                    print("No access")
+            case .notDetermined, .restricted, .denied:
+                print("No access")
                 if let bundleId = Bundle.main.bundleIdentifier,
                     let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")
                 {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
-                    self.dismiss(animated: true, completion: nil)
-                case .authorizedAlways, .authorizedWhenInUse:
-                    print("Access")
+                self.dismiss(animated: true, completion: nil)
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
                 locationRequst()
                 self.dismiss(animated: true, completion: nil)
-
-                @unknown default:
+                
+            @unknown default:
                 break
             }
-            } else {
-                print("Location services are not enabled")
+        } else {
+            print("Location services are not enabled")
         }
     }
     

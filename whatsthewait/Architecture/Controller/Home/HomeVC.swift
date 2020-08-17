@@ -57,8 +57,8 @@ class HomeVC: BaseVC {
     }
     
     func getCategorys(){
-        
-        ApiManager.shared.get(url: ApiUrls.categoryListUrl, params: nil) { (res:CategorysList?, err) in
+        let params:[String:Any] = ["lon":locationLongitude ?? 0.0,"lat":locationLatitude ?? 0.0]
+        ApiManager.shared.get(url: ApiUrls.categoryListUrl, params: params) { (res:CategorysList?, err) in
             
             if let error = err {
                 print("error in categoryItems api :\(error)")
