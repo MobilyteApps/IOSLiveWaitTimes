@@ -20,11 +20,11 @@ class HomeVC: BaseVC {
     var categorydatalist : CategorysList? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer());
+       
         presetView()
         
     }
-    
+
     private func presetView(){
         btnMenu.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(self.userLocationUpdate(notification:)), name: Notification.Name("locationManagerUpdate"), object: nil)
@@ -75,24 +75,43 @@ class HomeVC: BaseVC {
 
 }
 extension HomeVC:UITableViewDataSource,UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categorydatalist?.count ?? 0
+        let count = categorydatalist?.count ?? 0
+        return  count+1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell")as! HomeCell
+        let count = categorydatalist?.count ?? 0
+        if count != indexPath.row{
         cell.catItem = categorydatalist![indexPath.row]
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let categoryItem = categorydatalist![indexPath.row]
-        let VC = storyboard?.instantiateViewController(identifier: "SelectedCatVC")as! SelectedCatVC
-        VC.catID = categoryItem.id
-        VC.catImageUrl = categoryItem.iconURL
-        self.navigationController?.pushViewController(VC, animated: true)
+        let count = categorydatalist?.count ?? 0
+        if count != indexPath.row{
+            
+            let categoryItem = categorydatalist![indexPath.row]
+            let VC = storyboard?.instantiateViewController(identifier: "SelectedCatVC")as! SelectedCatVC
+            VC.catID = categoryItem.id
+            VC.catImageUrl = categoryItem.iconURL
+            self.navigationController?.pushViewController(VC, animated: true)
+        }else{
+            let VC = storyboard?.instantiateViewController(identifier: "ContactUsVC")as! ContactUsVC
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
     }
+     
+
+    
+   
 }
 
 extension HomeVC:UITextFieldDelegate{

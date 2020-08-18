@@ -14,13 +14,16 @@ class ContactUsVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnMenu.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        btnMenu.addTarget(self, action: #selector(back), for: .touchUpInside)
+//        btnMenu.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     @IBAction func selcteLocationVC(sender:UIButton) -> Void{
         openLocationVC()
     }
-
+    @objc func back(){
+        navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 
