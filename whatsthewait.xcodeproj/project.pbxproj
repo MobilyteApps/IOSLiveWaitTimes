@@ -637,18 +637,18 @@
 			baseConfigurationReference = 461EEDCA77045DE2E7BA2648 /* Pods-whatsthewait.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N55PFWG47J;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YSMAQ5JJL;
 				INFOPLIST_FILE = whatsthewait/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Infostride.AFS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.livewaittimes.livewaittimes;
 				PRODUCT_NAME = "Live Wait Times";
-				PROVISIONING_PROFILE_SPECIFIER = AFS;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -659,18 +659,18 @@
 			baseConfigurationReference = 69B6E6A65E27803795FD7350 /* Pods-whatsthewait.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N55PFWG47J;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YSMAQ5JJL;
 				INFOPLIST_FILE = whatsthewait/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Infostride.AFS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.livewaittimes.livewaittimes;
 				PRODUCT_NAME = "Live Wait Times";
-				PROVISIONING_PROFILE_SPECIFIER = AFS;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

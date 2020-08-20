@@ -87,7 +87,9 @@ extension HomeVC:UITableViewDataSource,UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell")as! HomeCell
         let count = categorydatalist?.count ?? 0
         if count != indexPath.row{
-        cell.catItem = categorydatalist![indexPath.row]
+            cell.catItem = categorydatalist![indexPath.row]
+        }else{
+            cell.dfultCell = 0
         }
         return cell
     }

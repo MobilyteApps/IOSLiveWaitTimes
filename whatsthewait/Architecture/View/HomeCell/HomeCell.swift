@@ -12,6 +12,12 @@ class HomeCell: UITableViewCell {
 
      @IBOutlet private weak var lblItem: UILabel!
      @IBOutlet private weak var imgItem: UIImageView!
+    var dfultCell:Int? = nil{
+        didSet{
+            lblItem.text = "Contact Us"
+            imgItem.image = #imageLiteral(resourceName: "contect1")
+        }
+    }
     var catItem : Categorys? = nil{
         didSet {
             lblItem.text = catItem?.name

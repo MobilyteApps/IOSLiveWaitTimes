@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tBZ-JA-fzB">
-                                        <rect key="frame" x="127" y="50.5" width="160" height="25.000000000000028"/>
+                                        <rect key="frame" x="127" y="50.5" width="160" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="mgw-Dx-bpR"/>
                                             <constraint firstAttribute="height" constant="25" id="nY3-Yl-x2V"/>
@@ -120,8 +120,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="tJS-S2-vTd" id="iDs-4P-fL5"/>
-                                    <outlet property="delegate" destination="tJS-S2-vTd" id="CMb-DJ-Vch"/>
+                                    <outlet property="dataSource" destination="tJS-S2-vTd" id="i5M-ol-EzS"/>
+                                    <outlet property="delegate" destination="tJS-S2-vTd" id="9Q2-jB-g1w"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ye3-6X-NIk">
@@ -229,7 +229,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="I8X-b7-h9Y">
-                                        <rect key="frame" x="70" y="50.5" width="160" height="25.000000000000028"/>
+                                        <rect key="frame" x="70" y="50.5" width="160" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="jL2-bJ-3j3"/>
                                             <constraint firstAttribute="width" constant="160" id="ufd-bE-rJd"/>
@@ -280,16 +280,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHj-YH-XA3">
                                 <rect key="frame" x="0.0" y="90" width="414" height="35"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSG-De-L7p">
-                                        <rect key="frame" x="20" y="8.5" width="54" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SORTED BY:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSG-De-L7p">
+                                        <rect key="frame" x="20" y="9.5" width="75.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb9-vE-RxR">
-                                        <rect key="frame" x="79" y="2.5" width="63" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="Distance">
+                                        <rect key="frame" x="100.5" y="3.5" width="66" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <state key="normal" title="DISTANCE">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -428,7 +428,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cA9-xI-UF3">
-                                        <rect key="frame" x="127" y="35.5" width="160" height="25.000000000000028"/>
+                                        <rect key="frame" x="127" y="35.5" width="160" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="JbL-fN-Kmv"/>
                                             <constraint firstAttribute="width" constant="160" id="oeO-SF-t9l"/>
@@ -572,7 +572,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="I7Y-2h-LWV">
-                                        <rect key="frame" x="127" y="50.5" width="160" height="25.000000000000028"/>
+                                        <rect key="frame" x="127" y="50.5" width="160" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="AEE-hS-gLB"/>
                                             <constraint firstAttribute="width" constant="160" id="BvR-cs-W6V"/>
@@ -647,7 +647,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-iR-Acz">
-                                        <rect key="frame" x="127" y="35.5" width="160" height="25.000000000000028"/>
+                                        <rect key="frame" x="127" y="35.5" width="160" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Iy1-Ma-jiG"/>
                                             <constraint firstAttribute="width" constant="160" id="sFj-LA-Ef8"/>

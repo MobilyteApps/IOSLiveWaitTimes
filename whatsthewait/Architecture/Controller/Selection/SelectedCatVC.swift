@@ -79,12 +79,12 @@ class SelectedCatVC: BaseVC {
     @IBAction func sortBy(sender:UIButton)-> Void{
         popupAlert(title: "Live Wait Times", message: "Sort by",style: .actionSheet, actionTitles: ["Distance","Wait Time"], actions: [{(action) in
                 print("action 1")
-                sender.setTitle("Distance", for: .normal)
+                sender.setTitle("DISTANCE", for: .normal)
                 self.filter(sortBy: .distance)
             self.filterby = .distance
             },{(action) in
                 print("Action 2")
-                sender.setTitle("Wait Time", for: .normal)
+                sender.setTitle("WAIT TIME", for: .normal)
                 self.filter(sortBy: .waitTime)
                 self.filterby = .waitTime
             }])
@@ -96,13 +96,43 @@ class SelectedCatVC: BaseVC {
                 self.catItems = catItems?.sorted {
                     Float($0.distance) ?? 0.0 < Float($1.distance) ?? 0.0
                 }
-               
-                
             }
         case .waitTime:
-            if catItems?.count ?? 0 > 1{
+            let catCount = catItems?.count ?? 0
+            if  catCount > 1{
                 self.catItems = catItems?.sorted {
-                    Float($0.waitTimeAverage) ?? 0 < Float($1.waitTimeAverage) ?? 0
+                    Float($0.waitTimeAverage.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0 < Float($1.waitTimeAverage.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0
+                }
+                var previous : CategorysItem? = nil
+                var subCatgorysItems : CatItems = []
+                var mainCatgoryArrayItems : [CatItems] = []
+                for (index,value) in self.catItems!.enumerated(){
+                   
+                    if previous?.waitTimeAverage==value.waitTimeAverage{
+                        subCatgorysItems.append(value)
+                    }else if !subCatgorysItems.isEmpty{
+                        mainCatgoryArrayItems.append(subCatgorysItems)
+                        subCatgorysItems.removeAll()
+                        subCatgorysItems.append(value)
+                    }else{
+                        subCatgorysItems.append(value)
+                    }
+                    previous = value
+                    if (!subCatgorysItems.isEmpty) && index == catCount-1
+                    {
+                        mainCatgoryArrayItems.append(subCatgorysItems)
+                    }
+                }
+                self.catItems?.removeAll()
+                for cItem in mainCatgoryArrayItems{
+                    let newSubCatgory = cItem.sorted {
+                         Float($0.distance) ?? 0.0 < Float($1.distance) ?? 0.0
+                    }
+                    self.catItems! += newSubCatgory
+                }
+                for (index,value) in self.catItems!.enumerated(){
+                    print("Itemindex----->",index)
+                    print("waitTimeAverage----->",value.waitTimeAverage)
                 }
             }
             
